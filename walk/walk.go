@@ -141,7 +141,7 @@ func Walk(c *config.Config, cexts []config.Configurer, dirs []string, mode Mode,
 		}
 
 		if slices.Contains(wc.excludes, rel) {
-			return fastwalk.SkipDir
+			return filepath.SkipDir
 		}
 
 		mu.Lock()
