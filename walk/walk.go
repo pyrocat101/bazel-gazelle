@@ -140,7 +140,7 @@ func Walk(c *config.Config, cexts []config.Configurer, dirs []string, mode Mode,
 			return err
 		}
 
-		if slices.Contains(wc.excludes, rel) {
+		if d.IsDir() && slices.Contains(wc.excludes, rel) {
 			return filepath.SkipDir
 		}
 
